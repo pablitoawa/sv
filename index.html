@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>✨ Mi San Valentín Especial ✨</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(45deg, #ffe6f0, #ffc0cb, #ffb6c1);
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        overflow-x: hidden;
+        animation: bgGradient 15s ease infinite;
+        background-size: 400% 400%;
+      }
+
+      @keyframes bgGradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 3rem 2rem 2rem 2rem;
+        border-radius: 30px;
+        box-shadow: 0 8px 32px rgba(255, 182, 193, 0.4);
+        max-width: 90%;
+        width: 600px;
+        position: relative;
+        border: 3px solid #ffb6c1;
+        backdrop-filter: blur(8px);
+        margin-top: 1.5%;
+      }
+
+      .zodiac-border {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border: 2px dashed #ffb6c1;
+        border-radius: 35px;
+        pointer-events: none;
+        overflow: visible;
+      }
+
+      .zodiac-border::before {
+        content: "♏";
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2.5em;
+        color: #ff69b4;
+        text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .zodiac-border::after {
+        content: "11:11";
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.5em;
+        color: #ff69b4;
+        text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(-5px);
+        }
+      }
+
+      .constellation {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        opacity: 0.5;
+        background: radial-gradient(
+            2px 2px at 10% 10%,
+            #ff69b4 100%,
+            transparent
+          ),
+          radial-gradient(1px 1px at 20% 20%, #ff69b4 100%, transparent),
+          radial-gradient(3px 3px at 30% 30%, #ff69b4 100%, transparent),
+          radial-gradient(2px 2px at 40% 40%, #ff69b4 100%, transparent),
+          radial-gradient(2px 2px at 50% 50%, #ff69b4 100%, transparent),
+          radial-gradient(3px 3px at 60% 60%, #ff69b4 100%, transparent),
+          radial-gradient(1px 1px at 70% 70%, #ff69b4 100%, transparent),
+          radial-gradient(2px 2px at 80% 80%, #ff69b4 100%, transparent),
+          radial-gradient(2px 2px at 90% 90%, #ff69b4 100%, transparent),
+          radial-gradient(3px 3px at 15% 15%, #ff69b4 100%, transparent),
+          radial-gradient(2px 2px at 25% 25%, #ff69b4 100%, transparent),
+          radial-gradient(3px 3px at 35% 35%, #ff69b4 100%, transparent),
+          radial-gradient(1px 1px at 45% 45%, #ff69b4 100%, transparent),
+          radial-gradient(2px 2px at 55% 55%, #ff69b4 100%, transparent),
+          radial-gradient(3px 3px at 65% 65%, #ff69b4 100%, transparent),
+          radial-gradient(2px 2px at 75% 75%, #ff69b4 100%, transparent),
+          radial-gradient(1px 1px at 85% 85%, #ff69b4 100%, transparent),
+          radial-gradient(3px 3px at 95% 95%, #ff69b4 100%, transparent);
+        background-size: 200% 200%;
+        animation: movingStars 30s linear infinite;
+      }
+
+      @keyframes movingStars {
+        0% {
+          background-position: 0% 0%;
+        }
+        100% {
+          background-position: 100% 100%;
+        }
+      }
+
+      .mystical-numbers {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .mystical-number {
+        position: absolute;
+        font-size: 1.2em;
+        color: #ff69b4;
+        opacity: 0.4;
+        animation: fadeInOut 3s ease-in-out infinite;
+      }
+
+      @keyframes fadeInOut {
+        0%,
+        100% {
+          opacity: 0.2;
+        }
+        50% {
+          opacity: 0.6;
+        }
+      }
+
+      h1 {
+        color: #ff69b4;
+        font-size: 2.1em;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+      }
+
+      .sanrio-gallery {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+      }
+
+      .sanrio-img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 20px;
+        border: 3px solid #ffb6c1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .sanrio-img:hover {
+        transform: scale(1.1);
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .btn {
+        padding: 1rem 2.5rem;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-yes {
+        background: linear-gradient(45deg, #ffb6c1, #ff69b4);
+        color: white;
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+      }
+
+      .btn-no {
+        background: #b0c4de;
+        color: white;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
+      }
+
+      .message {
+        background: rgba(255, 182, 193, 0.1);
+        padding: 1.5rem;
+        border-radius: 20px;
+        margin: 1.5rem 0;
+        color: #ff69b4;
+        font-size: 1.1em;
+        border: 2px dashed #ffb6c1;
+        display: none;
+      }
+
+      .message.show {
+        display: block;
+        animation: fadeIn 1s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .stars {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .star {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: #ffb6c1;
+        border-radius: 50%;
+        animation: twinkle 1.5s infinite ease-in-out;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.5);
+        }
+      }
+
+      .valentine-reminder {
+        font-style: italic;
+        color: #ff69b4;
+        margin-top: 2rem;
+        font-size: 1.1em;
+        display: none;
+      }
+
+      .valentine-reminder.show {
+        display: block;
+        animation: fadeIn 1s ease;
+      }
+
+      .hearts-container {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1000;
+      }
+
+      .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF69B4' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E")
+          no-repeat center/contain;
+        animation: floatHeart 4s ease-in infinite;
+      }
+
+      @keyframes floatHeart {
+        0% {
+          transform: translateY(100vh) scale(0);
+        }
+        50% {
+          transform: translateY(50vh) scale(1);
+        }
+        100% {
+          transform: translateY(-100px) scale(0);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          margin: 1rem;
+          padding: 1rem;
+        }
+
+        .sanrio-img {
+          width: 100px;
+          height: 100px;
+        }
+
+        .buttons {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        h1 {
+          font-size: 1.8em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="constellation"></div>
+    <div class="hearts-container"></div>
+
+    <div class="container">
+      <div class="zodiac-border"></div>
+      <div class="mystical-numbers">
+        <div class="mystical-number" style="top: 10%; left: 10%">✧11✧</div>
+        <div class="mystical-number" style="top: 20%; right: 10%">✧11✧</div>
+        <div class="mystical-number" style="bottom: 15%; left: 15%">♏</div>
+        <div class="mystical-number" style="bottom: 25%; right: 15%">✧11✧</div>
+      </div>
+      <h1>✨ ¿Puedo ser tu San Valentín? ✨</h1>
+
+      <div class="sanrio-gallery">
+        <img
+          src="https://i.pinimg.com/736x/1d/77/5f/1d775f5434bd56ce85d136c6f79e9465.jpg"
+          alt="Sanrio Love"
+          class="sanrio-img"
+        />
+        <img
+          src="https://i.pinimg.com/736x/03/28/87/03288700fe763a47f898446833674d22.jpg"
+          alt="Sanrio Hearts"
+          class="sanrio-img"
+        />
+      </div>
+
+      <div
+        style="
+          color: #ff69b4;
+          margin: 1.5rem 0;
+          background: rgba(255, 182, 193, 0.1);
+          padding: 1.5rem;
+          border-radius: 15px;
+        "
+      >
+        <div style="font-size: 1.4em; margin-bottom: 0.5rem">
+          ♏ Mi Escorpioncita Especial ✨
+        </div>
+        <p style="font-size: 1.2em; margin: 0.5rem 0">
+          Como estrellitas brillando en el cielo del 11/11, tu dulzura ilumina
+          mi mundo cada día. Nuestros corazoncitos están destinados a crear una
+          historia mágica y llena de amor. 💫
+        </p>
+        <div style="font-size: 1em; margin-top: 0.5rem; color: #ff1493">
+          Tu energía especial y el poder mágico del 11/11 hacen que mi corazón
+          lata más fuerte 💝
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="btn btn-yes" onclick="acceptValentine()">¡Sí! 💖</button>
+        <button class="btn btn-no" id="noBtn" onmouseover="moveButton()">
+          No 💔
+        </button>
+      </div>
+
+      <div id="specialMessage" class="message">
+        ¡Me haces muy feliz! 💝<br /><br />
+        Como estrellitas brillando en el cielo,<br />
+        tu dulzura me llena de alegría cada día.<br />
+        Eres mi pequeña estrella mágica del 11/11,<br />
+        haciendo cada momento más especial y bonito.<br /><br />
+        <img
+          src="https://i.pinimg.com/474x/f8/6a/4c/f86a4c0b0818d82132e72115a7effd65.jpg"
+          alt="Love Celebration"
+          style="width: 150px; margin: 1rem 0"
+        />
+      </div>
+
+      <div id="valentineReminder" class="valentine-reminder">
+        🌟 Vuelve el 14 de febrero para una sorpresita llena de amor y magia 🌟
+      </div>
+    </div>
+
+    <script>
+      // Crear estrellas
+      function createStars() {
+        const starsContainer = document.querySelector(".stars");
+        for (let i = 0; i < 100; i++) {
+          const star = document.createElement("div");
+          star.className = "star";
+          star.style.left = Math.random() * 100 + "vw";
+          star.style.top = Math.random() * 100 + "vh";
+          star.style.animationDelay = Math.random() * 2 + "s";
+          starsContainer.appendChild(star);
+        }
+      }
+
+      // Mover el botón "No"
+      function moveButton() {
+        const btn = document.getElementById("noBtn");
+        const padding = 20; // Padding from screen edges
+
+        // Get available space considering padding
+        const maxX = window.innerWidth - btn.offsetWidth - padding;
+        const maxY = window.innerHeight - btn.offsetHeight - padding;
+
+        // Calculate new position with padding
+        const newX = Math.min(Math.max(padding, Math.random() * maxX), maxX);
+        const newY = Math.min(Math.max(padding, Math.random() * maxY), maxY);
+
+        btn.style.position = "fixed";
+        btn.style.left = newX + "px";
+        btn.style.top = newY + "px";
+      }
+
+      // Crear corazones flotantes
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        document.querySelector(".hearts-container").appendChild(heart);
+
+        setTimeout(() => heart.remove(), 4000);
+      }
+
+      // Aceptar ser San Valentín
+      function acceptValentine() {
+        document.getElementById("specialMessage").classList.add("show");
+        document.getElementById("valentineReminder").classList.add("show");
+        document.querySelector(".buttons").style.display = "none";
+
+        // Iniciar lluvia de corazones
+        setInterval(createHeart, 300);
+      }
+
+      function checkValentinesDay(daysToAdd = 0) {
+        const today = new Date();
+        today.setDate(today.getDate() + daysToAdd);
+    
+        if (today.getMonth() === 1 && today.getDate() === 14) {
+            document.querySelector(".container").innerHTML = `
+                <div class="zodiac-border"></div>
+                <h1>✨ ¡Feliz Día de San Valentín! ✨</h1>
+                <div class="sanrio-gallery">
+                    <img src="https://i.pinimg.com/736x/38/f4/4e/38f44e5d1c4994eed4ca811ff190c2e5.jpg" alt="Valentine Love" class="sanrio-img">
+                    <img src="https://i.pinimg.com/236x/ce/28/06/ce28067cb038a7415a4c46e245235301.jpg" alt="Valentine Hearts" class="sanrio-img">
+                </div>
+                <div class="message show">
+                    Como estrellitas brillando en el cielo nocturno,<br>
+                    nuestro amor es mágico y especial. ✨<br><br>
+                    Cada momento contigo es un regalo,<br>
+                    lleno de dulzura y amor. 💫<br>
+                    Mi corazoncito late más fuerte cuando estoy contigo. 💝<br><br>
+                    ¡Te quiero muchísimo! 💖
+                </div>
+            `;
+            setInterval(createHeart, 300);
+        }
+    }
+
+      window.onload = () => {
+        createStars();
+        checkValentinesDay();
+      };
+    </script>
+  </body>
+</html>
