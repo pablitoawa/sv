@@ -381,7 +381,8 @@
         </div>
         <p style="font-size: 1.2em; margin: 0.5rem 0">
           Como estrellitas brillando en el cielo del 11/11, tu dulzura ilumina
-          mi mundo cada día. Tu corazoncito es tan cálido y mágico que me hace muy feliz. 💫
+          mi mundo cada día. Tu corazoncito es tan cálido y mágico que me hace
+          muy feliz. 💫
         </p>
         <div style="font-size: 1em; margin-top: 0.5rem; color: #ff1493">
           Tu energía especial y el poder mágico del 11/11 hacen que mi corazón
@@ -469,9 +470,9 @@
       function checkValentinesDay(daysToAdd = 0) {
         const today = new Date();
         today.setDate(today.getDate() + daysToAdd);
-    
+
         if (today.getMonth() === 1 && today.getDate() === 14) {
-            document.querySelector(".container").innerHTML = `
+          document.querySelector(".container").innerHTML = `
                 <div class="zodiac-border"></div>
                 <h1>✨ ¡Feliz Día de San Valentín! ✨</h1>
                 <div class="sanrio-gallery">
@@ -480,16 +481,24 @@
                 </div>
                 <div class="message show">
                     Como estrellitas brillando en el cielo nocturno,<br>
-                    nuestro amor es mágico y especial. ✨<br><br>
+                    nuestro cariñito es mágico y especial. ✨<br><br>
                     Cada momento contigo es un regalo,<br>
-                    lleno de dulzura y amor. 💫<br>
+                    lleno de dulzura y amor. 💫<br><br>
+                    Te quiero agradecer por permitirme permanecer a tu lado,<br>
+                    por permitirme quererte, amarte, cuidarte,<br>
+                    pese a que sea o no un mal momento,<br>
+                    por permitirme soñar contigo en el futuro,<br>
+                    un futuro donde pueda estar cuidandote en todo momento. 💖<br><br>
                     Mi corazoncito late más fuerte cuando estoy contigo. 💝<br><br>
-                    ¡Te quiero muchísimo! 💖
+                    ¡Te amo muchísimo! 💖
+                    <br><br>
+                    ¿Podemos compartir fotitos y hacer match juntitos 🥺?
+                    <br>
                 </div>
             `;
-            setInterval(createHeart, 300);
+          setInterval(createHeart, 300);
         }
-    }
+      }
 
       window.onload = () => {
         createStars();
