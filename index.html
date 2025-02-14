@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>✨ Mi San Valentín Especial ✨</title>
     <style>
+      .view-buttons {
+        position: relative;
+      }
+
+      .view-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1em;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.9);
+        color: #ff69b4;
+        border: 2px solid #ff69b4;
+        transition: all 0.3s ease;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+      }
+
+      .view-btn:hover,
+      .view-btn.active {
+        background: #ff69b4;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+      }
+
       body {
         margin: 0;
         min-height: 100vh;
@@ -345,73 +370,121 @@
     <div class="hearts-container"></div>
 
     <div class="container">
-      <div class="zodiac-border"></div>
-      <div class="mystical-numbers">
-        <div class="mystical-number" style="top: 10%; left: 10%">✧11✧</div>
-        <div class="mystical-number" style="top: 20%; right: 10%">✧11✧</div>
-        <div class="mystical-number" style="bottom: 15%; left: 15%">♏</div>
-        <div class="mystical-number" style="bottom: 25%; right: 15%">✧11✧</div>
-      </div>
-      <h1>✨ ¿Puedo ser tu San Valentín? ✨</h1>
-
-      <div class="sanrio-gallery">
-        <img
-          src="https://i.pinimg.com/736x/1d/77/5f/1d775f5434bd56ce85d136c6f79e9465.jpg"
-          alt="Sanrio Love"
-          class="sanrio-img"
-        />
-        <img
-          src="https://i.pinimg.com/736x/03/28/87/03288700fe763a47f898446833674d22.jpg"
-          alt="Sanrio Hearts"
-          class="sanrio-img"
-        />
-      </div>
-
-      <div
-        style="
-          color: #ff69b4;
-          margin: 1.5rem 0;
-          background: rgba(255, 182, 193, 0.1);
-          padding: 1.5rem;
-          border-radius: 15px;
-        "
-      >
-        <div style="font-size: 1.4em; margin-bottom: 0.5rem">
-          ♏ Mi Estrellita Especial ✨
-        </div>
-        <p style="font-size: 1.2em; margin: 0.5rem 0">
-          Como estrellitas brillando en el cielo del 11/11, tu dulzura ilumina
-          mi mundo cada día. Tu corazoncito es tan cálido y mágico que me hace
-          muy feliz. 💫
-        </p>
-        <div style="font-size: 1em; margin-top: 0.5rem; color: #ff1493">
-          Tu energía especial y el poder mágico del 11/11 hacen que mi corazón
-          lata más fuerte 💝
-        </div>
-      </div>
-
-      <div class="buttons">
-        <button class="btn btn-yes" onclick="acceptValentine()">¡Sí! 💖</button>
-        <button class="btn btn-no" id="noBtn" onmouseover="moveButton()">
-          No 💔
+      <div class="view-buttons">
+        <button class="view-btn" onclick="switchView('initial')">
+          🌟 Propuesta Inicial 🌟
+        </button>
+        <button class="view-btn" onclick="switchView('valentine')">
+          💘 14 de Febrero 💘
         </button>
       </div>
+      <div id="initialView">
+        <div class="zodiac-border"></div>
+        <div class="mystical-numbers">
+          <div class="mystical-number" style="top: 10%; left: 10%">✧11✧</div>
+          <div class="mystical-number" style="top: 20%; right: 10%">✧11✧</div>
+          <div class="mystical-number" style="bottom: 15%; left: 15%">♏</div>
+          <div class="mystical-number" style="bottom: 25%; right: 15%">
+            ✧11✧
+          </div>
+        </div>
+        <h1>✨ ¿Puedo ser tu San Valentín? ✨</h1>
 
-      <div id="specialMessage" class="message">
-        ¡Me haces muy feliz! 💝<br /><br />
-        Como estrellitas brillando en el cielo,<br />
-        tu dulzura me llena de alegría cada día.<br />
-        Eres mi pequeña estrella mágica del 11/11,<br />
-        haciendo cada momento más especial y bonito.<br /><br />
-        <img
-          src="https://i.pinimg.com/474x/f8/6a/4c/f86a4c0b0818d82132e72115a7effd65.jpg"
-          alt="Love Celebration"
-          style="width: 150px; margin: 1rem 0"
-        />
+        <div class="sanrio-gallery">
+          <img
+            src="https://i.pinimg.com/736x/1d/77/5f/1d775f5434bd56ce85d136c6f79e9465.jpg"
+            alt="Sanrio Love"
+            class="sanrio-img"
+          />
+          <img
+            src="https://i.pinimg.com/736x/03/28/87/03288700fe763a47f898446833674d22.jpg"
+            alt="Sanrio Hearts"
+            class="sanrio-img"
+          />
+        </div>
+
+        <div
+          style="
+            color: #ff69b4;
+            margin: 1.5rem 0;
+            background: rgba(255, 182, 193, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+          "
+        >
+          <div style="font-size: 1.4em; margin-bottom: 0.5rem">
+            ♏ Mi Estrellita Especial ✨
+          </div>
+          <p style="font-size: 1.2em; margin: 0.5rem 0">
+            Como estrellitas brillando en el cielo del 11/11, tu dulzura ilumina
+            mi mundo cada día. Tu corazoncito es tan cálido y mágico que me hace
+            muy feliz. 💫
+          </p>
+          <div style="font-size: 1em; margin-top: 0.5rem; color: #ff1493">
+            Tu energía especial y el poder mágico del 11/11 hacen que mi corazón
+            lata más fuerte 💝
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button class="btn btn-yes" onclick="acceptValentine()">
+            ¡Sí! 💖
+          </button>
+          <button class="btn btn-no" id="noBtn" onmouseover="moveButton()">
+            No 💔
+          </button>
+        </div>
+
+        <div id="specialMessage" class="message">
+          ¡Me haces muy feliz! 💝<br /><br />
+          Como estrellitas brillando en el cielo,<br />
+          tu dulzura me llena de alegría cada día.<br />
+          Eres mi pequeña estrella mágica del 11/11,<br />
+          haciendo cada momento más especial y bonito.<br /><br />
+          <img
+            src="https://i.pinimg.com/474x/f8/6a/4c/f86a4c0b0818d82132e72115a7effd65.jpg"
+            alt="Love Celebration"
+            style="width: 150px; margin: 1rem 0"
+          />
+        </div>
+
+        <div id="valentineReminder" class="valentine-reminder">
+          🌟 Vuelve el 14 de febrero para una sorpresita llena de amor y magia
+          🌟
+        </div>
       </div>
 
-      <div id="valentineReminder" class="valentine-reminder">
-        🌟 Vuelve el 14 de febrero para una sorpresita llena de amor y magia 🌟
+      <div id="valentineView" style="display: none">
+        <div class="zodiac-border"></div>
+        <h1>✨ ¡Feliz Día de San Valentín! ✨</h1>
+        <div class="sanrio-gallery">
+          <img
+            src="https://i.pinimg.com/736x/38/f4/4e/38f44e5d1c4994eed4ca811ff190c2e5.jpg"
+            alt="Valentine Love"
+            class="sanrio-img"
+          />
+          <img
+            src="https://i.pinimg.com/236x/ce/28/06/ce28067cb038a7415a4c46e245235301.jpg"
+            alt="Valentine Hearts"
+            class="sanrio-img"
+          />
+        </div>
+        <div class="message show">
+          Como estrellitas brillando en el cielo nocturno,<br />
+          nuestro cariñito es mágico y especial. ✨<br /><br />
+          Cada momento contigo es un regalo,<br />
+          lleno de dulzura y amor. 💫<br /><br />
+          Te quiero agradecer por permitirme permanecer a tu lado,<br />
+          por permitirme quererte, amarte, cuidarte,<br />
+          pese a que sea o no un mal momento,<br />
+          por permitirme soñar contigo en el futuro,<br />
+          un futuro donde pueda estar cuidandote en todo momento. 💖<br /><br />
+          Mi corazoncito late más fuerte cuando estoy contigo. 💝<br /><br />
+          ¡Te amo muchísimo! 💖
+          <br /><br />
+          ¿Podemos compartir fotitos y hacer match juntitos 🥺?
+          <br />
+        </div>
       </div>
     </div>
 
@@ -467,42 +540,29 @@
         setInterval(createHeart, 300);
       }
 
-      function checkValentinesDay(daysToAdd = 1) {
-        const today = new Date();
-        today.setDate(today.getDate() + daysToAdd);
+      // Function to switch views
+      function switchView(view) {
+        const initialView = document.getElementById("initialView");
+        const valentineView = document.getElementById("valentineView");
+        const buttons = document.querySelectorAll(".view-btn");
 
-        if (today.getMonth() === 1 && today.getDate() === 14) {
-          document.querySelector(".container").innerHTML = `
-                <div class="zodiac-border"></div>
-                <h1>✨ ¡Feliz Día de San Valentín! ✨</h1>
-                <div class="sanrio-gallery">
-                    <img src="https://i.pinimg.com/736x/38/f4/4e/38f44e5d1c4994eed4ca811ff190c2e5.jpg" alt="Valentine Love" class="sanrio-img">
-                    <img src="https://i.pinimg.com/236x/ce/28/06/ce28067cb038a7415a4c46e245235301.jpg" alt="Valentine Hearts" class="sanrio-img">
-                </div>
-                <div class="message show">
-                    Como estrellitas brillando en el cielo nocturno,<br>
-                    nuestro cariñito es mágico y especial. ✨<br><br>
-                    Cada momento contigo es un regalo,<br>
-                    lleno de dulzura y amor. 💫<br><br>
-                    Te quiero agradecer por permitirme permanecer a tu lado,<br>
-                    por permitirme quererte, amarte, cuidarte,<br>
-                    pese a que sea o no un mal momento,<br>
-                    por permitirme soñar contigo en el futuro,<br>
-                    un futuro donde pueda estar cuidandote en todo momento. 💖<br><br>
-                    Mi corazoncito late más fuerte cuando estoy contigo. 💝<br><br>
-                    ¡Te amo muchísimo! 💖
-                    <br><br>
-                    ¿Podemos compartir fotitos y hacer match juntitos 🥺?
-                    <br>
-                </div>
-            `;
+        buttons.forEach((btn) => btn.classList.remove("active"));
+
+        if (view === "initial") {
+          initialView.style.display = "block";
+          valentineView.style.display = "none";
+          buttons[0].classList.add("active");
+        } else {
+          initialView.style.display = "none";
+          valentineView.style.display = "block";
+          buttons[1].classList.add("active");
           setInterval(createHeart, 300);
         }
       }
 
       window.onload = () => {
         createStars();
-        checkValentinesDay();
+        document.querySelector(".view-btn").classList.add("active");
       };
     </script>
   </body>
